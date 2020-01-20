@@ -6,7 +6,7 @@ const Hook = () => {
   useEffect(() => {
     //   update the document title using the browswer API
     document.title = `you clicked ${count} times`;
-  }, []);
+  }, [count]);
 
   return (
     <div>
