@@ -1,12 +1,17 @@
-import React from "react";
+import { useEffect, useState } from "react";
 
-const API = () => {
-  return (
-    <div>
-      Hi i'm the api component. soon i'll be hosting data from another source
-      somewhere else on this planet right here just for you to see.
-    </div>
-  );
+// passing the url from our other file to return data.
+export const useFetch = url => {
+  const [state, setState] = useState({ data: null, loading: true });
+
+  useEffect(() => {
+    setState({ data: null, loading: true });
+    fetch(url)
+      .then(x => x.text())
+      .then(y => {
+        setState({ data: y, loading: false });
+      });
+  }, [url]);
+
+  return state;
 };
-
-export default API;

@@ -1,9 +1,12 @@
 import React from "react";
 // import all react components here. build router from here?
 import Hook from "./axios/index";
-import API from "./api";
+import { useFetch } from "./api/index";
 
 function App() {
+  // calling useFetch api hook.
+  const { data, loading } = useFetch("http://numbersapi.com/random/date");
+
   return (
     <div className='Body'>
       <div className='header-wrap'>
@@ -11,7 +14,8 @@ function App() {
         <p>A CRA App with the axios fixins.</p>
       </div>
       <Hook />
-      <API />
+
+      <div>{loading ? "loading..." : data}</div>
     </div>
   );
 }
