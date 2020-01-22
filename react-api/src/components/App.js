@@ -1,8 +1,10 @@
 import React from "react";
 // import all react components here. build router from here?
-import RouteNav from "./router/Route-Nav";
-import NumberAPI from "./api/NumberAPI-mod";
-import Hook from "./axios/index";
+import RouteNav from "../router/Route-Nav";
+import NumberAPI from "../api/NumberAPI-mod";
+import Hook from "../axios/index";
+import NasaPic from "../nasa/index";
+
 function App() {
   return (
     <div className='Body'>
@@ -13,6 +15,7 @@ function App() {
       <RouteNav />
       <NumberAPI />
       <Hook />
+      <NasaPic />
     </div>
   );
 }
